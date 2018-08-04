@@ -31,40 +31,6 @@ public class AdapterTimeLine extends RecyclerView.Adapter<AdapterTimeLine.ViewHo
 
     private List<Information> objects;
     private Activity context;
-    private  int resource;
-    private int mFlags;
-    private long mTransitionResolution = DateUtils.DAY_IN_MILLIS;
-
-    public static final long[] mTimestamps = new long[]{
-            0,
-            DateUtils.SECOND_IN_MILLIS,
-            2 * DateUtils.SECOND_IN_MILLIS,
-            5 * DateUtils.SECOND_IN_MILLIS,
-            10 * DateUtils.SECOND_IN_MILLIS,
-            30 * DateUtils.SECOND_IN_MILLIS,
-            DateUtils.MINUTE_IN_MILLIS,
-            2 * DateUtils.MINUTE_IN_MILLIS,
-            5 * DateUtils.MINUTE_IN_MILLIS,
-            10 * DateUtils.MINUTE_IN_MILLIS,
-            30 * DateUtils.MINUTE_IN_MILLIS,
-            DateUtils.HOUR_IN_MILLIS,
-            2 * DateUtils.HOUR_IN_MILLIS,
-            5 * DateUtils.HOUR_IN_MILLIS,
-            10 * DateUtils.HOUR_IN_MILLIS,
-            24 * DateUtils.HOUR_IN_MILLIS,
-            36 * DateUtils.HOUR_IN_MILLIS,
-            72 * DateUtils.HOUR_IN_MILLIS,
-            4 * DateUtils.DAY_IN_MILLIS,
-            5 * DateUtils.DAY_IN_MILLIS,
-            7 * DateUtils.DAY_IN_MILLIS,
-            14 * DateUtils.DAY_IN_MILLIS,
-            21 * DateUtils.DAY_IN_MILLIS,
-            DateUtils.DAY_IN_MILLIS * 30,
-            2 * DateUtils.DAY_IN_MILLIS * 30,
-            3 * DateUtils.DAY_IN_MILLIS * 30,
-            DateUtils.DAY_IN_MILLIS * 30 * 12,
-            2 * DateUtils.DAY_IN_MILLIS * 30 * 12
-    };
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
@@ -109,24 +75,6 @@ public class AdapterTimeLine extends RecyclerView.Adapter<AdapterTimeLine.ViewHo
         viewHolder.getAdress().setText(objects.get(i).getAdress());
 
         try{
-//            SpannableString string = new SpannableString(objects.get(i).getContent());
-//            ClickableSpan ClickableSpan = new ClickableSpan() {
-//                @Override
-//                public void onClick(View view) {
-//                    // Do something
-//                    Toast.makeText(context, "You just click in HAGTAG # ... Welcome to Dwarer", Toast.LENGTH_SHORT).show();
-//                }
-//            };
-//            string.setSpan(ClickableSpan, 0, 4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-//            viewHolder.getContent().addAutoLinkMode(
-//                    AutoLinkMode.MODE_HASHTAG,
-//                    AutoLinkMode.MODE_PHONE,
-//                    AutoLinkMode.MODE_URL,
-//                    AutoLinkMode.MODE_MENTION,
-//                    AutoLinkMode.MODE_CUSTOM);
-//
-//            viewHolder.getContent().setAutoLinkText((objects.get(i).getContent()));
-
             Pattern mentionPattern = Pattern.compile("(@[A-Za-z0-9_-]+)");
             Pattern hashtagPattern = Pattern.compile("#(\\w+|\\W+)");
 
