@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Recyclerview</string>
+    <string-array name="title">
+        <item>Loki</item>
+        <item>Ironman</item>
+        <item>Batman</item>
+        <item>GreenLantern</item>
+        <item>Wonderwoman</item>
+        <item>Deadpool</item>
+        <item>Xmen</item>
+        <item>CaptianAmerican</item>
+        <item>WinenrSodier</item>
+        <item>GTX</item>
+        <item>XXX</item>
+        <item>HULK</item>
+    </string-array>
+    <string-array name="adress">
+        <item>@phungvandat</item>
+        <item>@lehoangthienan</item>
+        <item>@hieuphan</item>
+        <item>@hieumap</item>
+        <item>@phamletrunghieu</item>
+        <item>@dangvietdung</item>
+        <item>@legiona</item>
+        <item>@category</item>
+        <item>@lendabook</item>
+        <item>@golang</item>
+        <item>@javascrip</item>
+        <item>@reactnativeJS</item>
+    </string-array>
+    <string-array name="content">
+        <item>#abc Timothy Donald Cook (Tim Cook) sinh ra ở thành phố Mobile, Alabama, ngày 1/11/1960. Ông lớn lên ở gần thành phố Robertsdale, nơi đã trải qua quãng đời học sinh ở trường trung học. Cha của ông, Donald Cook, là một công nhân www.gooogle.com</item>
+        <item>#123 www.vnexpress.com Năm 1982, Cook tốt nghiệp Đại học Auburn ở Alabama với bằng kỹ sư công nghiệp</item>
+        <item>#anleHello , Please enter this link www.golang.com to know more about OOP and Blockchain</item>
+        <item>#thanhpham Hello , Please enter this link www.golang.com to know more about OOP and Blockchain</item>
+        <item>#golang www.vnexpress.com Năm 1982, Cook tốt nghiệp Đại học Auburn ở Alabama với bằng kỹ sư công nghiệp</item>
+        <item>#abcd Timothy Donald Cook (Tim Cook) sinh ra ở thành phố Mobile, Alabama, ngày 1/11/1960. Ông lớn lên ở gần thành phố Robertsdale, nơi đã trải qua quãng đời học sinh ở trường trung học. Cha của ông, Donald Cook, là một công nhân www.gooogle.com</item>
+        <item>#lol www.vnexpress.com Năm 1982, Cook tốt nghiệp Đại học Auburn ở Alabama với bằng kỹ sư công nghiệp</item>
+        <item>#pupg Timothy Donald Cook (Tim Cook) sinh ra ở thành phố Mobile, Alabama, ngày 1/11/1960. Ông lớn lên ở gần thành phố Robertsdale, nơi đã trải qua quãng đời học sinh ở trường trung học. Cha của ông, Donald Cook, là một công nhân www.gooogle.com</item>
+        <item>#apple Hello , Please enter this link www.golang.com to know more about OOP and Blockchain</item>
+        <item>#androidTimothy Donald Cook (Tim Cook) sinh ra ở thành phố Mobile, Alabama, ngày 1/11/1960. Ông lớn lên ở gần thành phố Robertsdale, nơi đã trải qua quãng đời học sinh ở trường trung học. Cha của ông, Donald Cook, là một công nhân www.gooogle.com</item>
+        <item>#IOS www.vnexpress.com Năm 1982, Cook tốt nghiệp Đại học Auburn ở Alabama với bằng kỹ sư công nghiệp</item>
+        <item>#iphone Hello , Please enter this link www.golang.com to know more about OOP and Blockchain</item>
+    </string-array>
+    <string-array name="urlanh">
+        <item>https://upload.wikimedia.org/wikipedia/en/4/4d/Avengers_Infinity_War_poster.jpg</item>
+        <item>https://pre00.deviantart.net/9929/th/pre/i/2017/288/3/4/avengers__infinity_war_poster_by_timetravel6000v2-dbqoeyb.jpg</item>
+        <item>https://pixel.nymag.com/imgs/daily/vulture/2018/04/09/09-avengers-infinity-war.w710.h473.jpg</item>
+        <item>https://timedotcom.files.wordpress.com/2018/04/dtt4200_v519-1049.jpg</item>
+        <item>https://www.technobuffalo.com/wp-content/uploads/2018/03/avengers-infinity-war-trailer-2-19-470x310@2x.jpg</item>
+        <item>https://img.purch.com/o/aHR0cDovL3d3dy5uZXdzYXJhbWEuY29tL2ltYWdlcy9pLzAwMC8yMjQvNTcyL2kwMi9TdGFya1N0cmFuZ2VfSGVhZGVyLmpwZw==</item>
+        <item>https://i.amz.mshcdn.com/W9QXSADu-nT4T6mxMqHbbo2NFRw=/950x534/filters:quality(90)/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F754701%2Fcff7bb96-7dfa-4033-a72f-9518eb0b43bc.jpg</item>
+        <item>https://static.gamespot.com/uploads/original/123/1239113/3368750-aiw_blackwidow_v2_sm.jpg</item>
+        <item>https://cdn.empireonline.com/jpg/80/0/0/1200/675/0/0/0/0/0/0/0/c/articles/5ab121d1c5fe574b330caf48/infinity-war-cover-CROP.jpg</item>
+        <item>https://nerdist.com/wp-content/uploads/2017/11/Screen-Shot-2017-11-29-at-5.13.04-PM.png</item>
+        <item>https://www.cbr.com/wp-content/uploads/2018/02/hulkbuster-infinity-war-trailer.jpg</item>
+        <item>http://cdn.collider.com/wp-content/uploads/2017/07/avengers-infinity-war-logo1-600x200.jpg</item>
+    </string-array>
+    <string-array name="time">
+        <item>2018/08/03 12:12:12</item>
+        <item>2018/08/03 12:12:12</item>
+        <item>2018/08/03 14:12:12</item>
+        <item>2018/08/03 11:12:12</item>
+        <item>2018/08/03 09:12:12</item>
+        <item>2018/08/03 07:12:12</item>
+        <item>2018/08/03 05:12:12</item>
+        <item>2018/08/03 05:12:12</item>
+        <item>2018/08/03 04:12:12</item>
+        <item>2018/08/03 04:12:12</item>
+        <item>2018/08/03 02:12:12</item>
+        <item>2018/08/03 01:12:12</item>
+    </string-array>
+</resources>
