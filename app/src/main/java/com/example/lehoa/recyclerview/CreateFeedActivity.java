@@ -77,6 +77,10 @@ public class CreateFeedActivity extends AppCompatActivity {
         edtContent = findViewById(R.id.edtContent);
         imgAvt = findViewById(R.id.imgAvt);
 
+        loadImages();
+    }
+
+    private void loadImages() {
         Glide.with(this)
                 .asBitmap()
                 .load(url)
