@@ -21,6 +21,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.lehoa.recyclerview.R;
 import com.example.lehoa.recyclerview.model.Information;
+import com.example.lehoa.recyclerview.utility.charsequence;
+import com.example.lehoa.recyclerview.utility.spannablestring;
 import com.luseen.autolinklibrary.AutoLinkMode;
 import com.luseen.autolinklibrary.AutoLinkTextView;
 
@@ -32,12 +34,12 @@ public class AdapterTimeLine extends RecyclerView.Adapter<AdapterTimeLine.ViewHo
 
     private List<Information> objects;
     private Activity context;
+    private spannablestring stContent;
+    private charsequence cqTime ;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
         public ImageView imgAvt ;
         public TextView txtTitle  , txtTime , txtContent , txtAdress ;
-//        public AutoLinkTextView txtContent;
 
         public ViewHolder(View view) {
             super(view);
@@ -75,11 +77,15 @@ public class AdapterTimeLine extends RecyclerView.Adapter<AdapterTimeLine.ViewHo
         viewHolder.getTitle().setText(objects.get(i).getTitle());
         viewHolder.getAdress().setText(objects.get(i).getAdress());
 
-
-        viewHolder.getContent().setText(objects.get(i).getSpannable(context));
+        //set content for format
+        stContent = new spannablestring(context ,objects.get(i).getContent());
+        viewHolder.getContent().setText(stContent.getSpannableString());
         viewHolder.getContent().setMovementMethod(LinkMovementMethod.getInstance());
 
-        viewHolder.getTime().setText(objects.get(i).getCharSequence());
+        //set time for format
+        cqTime = new charsequence(objects.get(i).getDtPost());
+        viewHolder.getTime().setText(cqTime.getCharSequence());
+
 
         loadImage(viewHolder.getAvt() , i);
 

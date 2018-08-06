@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,11 +28,20 @@ public class CreateFeedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_feed);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
-
+        initView();
+        getURL();
         addcontrols();
         addevents();
+    }
+
+    private void getURL() {
+        Intent intent = getIntent();
+        url = intent.getStringExtra("url");
+    }
+
+    private void initView() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
     }
 
     private void addevents() {
@@ -59,20 +69,16 @@ public class CreateFeedActivity extends AppCompatActivity {
                         System.currentTimeMillis()
                 ));
                 Toast.makeText(this , "Your compose is finished " , Toast.LENGTH_LONG).show();
-                edtContent.setText("");
+//                edtContent.setText("");
+                this.finish();
             }catch (Exception e){
-                Toast.makeText(this, "Your Content is wrong !",
-                        Toast.LENGTH_LONG).show();
-                e.printStackTrace();
+                Log.d("Error :",e.getMessage());
             }
         }
     }
 
 
     private void addcontrols() {
-        Intent intent = getIntent();
-        url = intent.getStringExtra("url");
-
         btnWrite = findViewById(R.id.btnWrite);
         edtContent = findViewById(R.id.edtContent);
         imgAvt = findViewById(R.id.imgAvt);
