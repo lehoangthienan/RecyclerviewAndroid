@@ -18,7 +18,7 @@ import android.support.design.widget.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView rcTimeLine ;
-    public static ArrayList<Information> listTimeLine;
+    public static ArrayList<Information> listTimeLine = new ArrayList<>();
     AdapterTimeLine adapterTimeLine;
     FloatingActionButton fab;
     String linkPicture = "https://zmp3-photo.zadn.vn/thumb/240_240/avatars/4/3/43d8be33dc00a33132c82adb9d0d3a54_1509355224.jpg";
@@ -28,10 +28,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+        initView();
         addcontrols();
         addevents();
+    }
+
+    private void initView() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
     }
 
     private void addevents() {
@@ -50,78 +54,7 @@ public class MainActivity extends AppCompatActivity {
         rcTimeLine = findViewById(R.id.rcTimeLine);
         rcTimeLine.setHasFixedSize(true);
 
-        long dt = Long.parseLong("1533338840000");
-        listTimeLine = new ArrayList<>();
-        listTimeLine.add(new Information(
-                "We Don't Talk Anymore" ,
-                "#eco please enter go go go www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
-                "@lehoangthienan",
-                linkPicture,
-                dt
-        ));
-        listTimeLine.add(new Information(
-                "We Don't Talk Anymore" ,
-                "#bcd24XC5S please go go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
-                "@lehoangthienan",
-                linkPicture,
-                dt
-        ));
-        listTimeLine.add(new Information(
-                "We Don't Talk Anymore" ,
-                "#fff123 please enter go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
-                "@lehoangthienan",
-                linkPicture,
-                dt
-        ));
-        listTimeLine.add(new Information(
-                "We Don't Talk Anymore" ,
-                "#xxx please enter go go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
-                "@lehoangthienan",
-                linkPicture,
-                dt
-        ));
-        listTimeLine.add(new Information(
-                "We Don't Talk Anymore" ,
-                "#ANL please enter go go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
-                "@lehoangthienan",
-                linkPicture,
-                dt
-        ));
-        listTimeLine.add(new Information(
-                "We Don't Talk Anymore" ,
-                "#eco please enter go go go www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
-                "@lehoangthienan",
-                linkPicture,
-                dt
-        ));
-        listTimeLine.add(new Information(
-                "We Don't Talk Anymore" ,
-                "#bcd24XC5S please go go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
-                "@lehoangthienan",
-                linkPicture,
-                dt
-        ));
-        listTimeLine.add(new Information(
-                "We Don't Talk Anymore" ,
-                "#fff123 please enter go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
-                "@lehoangthienan",
-                linkPicture,
-                dt
-        ));
-        listTimeLine.add(new Information(
-                "We Don't Talk Anymore" ,
-                "#xxx please enter go go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
-                "@lehoangthienan",
-                linkPicture,
-                dt
-        ));
-        listTimeLine.add(new Information(
-                "We Don't Talk Anymore" ,
-                "#ANL please enter go go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
-                "@lehoangthienan",
-                linkPicture,
-                dt
-        ));
+        addData();
 
 
         adapterTimeLine = new AdapterTimeLine(this ,listTimeLine);
@@ -130,6 +63,82 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    private void addData() {
+        long dt = Long.parseLong("1533338840000");
+        listTimeLine.add(new Information(
+                "We Don't Talk Anymore" ,
+                "#eco please enter go go go www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
+                "@lehoangthienan",
+                linkPicture,
+                dt
+        ));
+        listTimeLine.add(new Information(
+                "We Don't Talk Anymore" ,
+                "#bcd24XC5S please go go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
+                "@lehoangthienan",
+                linkPicture,
+                dt
+        ));
+        listTimeLine.add(new Information(
+                "We Don't Talk Anymore" ,
+                "#fff123 please enter go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
+                "@lehoangthienan",
+                linkPicture,
+                dt
+        ));
+        listTimeLine.add(new Information(
+                "We Don't Talk Anymore" ,
+                "#xxx please enter go go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
+                "@lehoangthienan",
+                linkPicture,
+                dt
+        ));
+        listTimeLine.add(new Information(
+                "We Don't Talk Anymore" ,
+                "#ANL please enter go go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
+                "@lehoangthienan",
+                linkPicture,
+                dt
+        ));
+        listTimeLine.add(new Information(
+                "We Don't Talk Anymore" ,
+                "#eco please enter go go go www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
+                "@lehoangthienan",
+                linkPicture,
+                dt
+        ));
+        listTimeLine.add(new Information(
+                "We Don't Talk Anymore" ,
+                "#bcd24XC5S please go go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
+                "@lehoangthienan",
+                linkPicture,
+                dt
+        ));
+        listTimeLine.add(new Information(
+                "We Don't Talk Anymore" ,
+                "#fff123 please enter go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
+                "@lehoangthienan",
+                linkPicture,
+                dt
+        ));
+        listTimeLine.add(new Information(
+                "We Don't Talk Anymore" ,
+                "#xxx please enter go go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
+                "@lehoangthienan",
+                linkPicture,
+                dt
+        ));
+        listTimeLine.add(new Information(
+                "We Don't Talk Anymore" ,
+                "#ANL please enter go go go  www.gooogle.com Điều tra nghi vấn khuất tất trong chấm trắc nghiệm, Công an tỉnh Hòa Bình đã khởi tố vụ án Lợi dụng chức vụ quyền hạn...",
+                "@lehoangthienan",
+                linkPicture,
+                dt
+        ));
+
+    }
+
     @Override
     public void onResume(){
         super.onResume();

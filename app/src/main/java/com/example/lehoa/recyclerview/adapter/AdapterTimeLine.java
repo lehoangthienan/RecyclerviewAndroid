@@ -10,6 +10,7 @@ import android.text.TextPaint;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,100 +75,32 @@ public class AdapterTimeLine extends RecyclerView.Adapter<AdapterTimeLine.ViewHo
         viewHolder.getTitle().setText(objects.get(i).getTitle());
         viewHolder.getAdress().setText(objects.get(i).getAdress());
 
-        try{
-            Pattern mentionPattern = Pattern.compile("(@[A-Za-z0-9_-]+)");
-            Pattern hashtagPattern = Pattern.compile("#(\\w+|\\W+)");
 
-            Matcher o = hashtagPattern.matcher(objects.get(i).getContent());
-            Matcher mention = mentionPattern.matcher(objects.get(i).getContent());
+        viewHolder.getContent().setText(objects.get(i).getSpannable(context));
+        viewHolder.getContent().setMovementMethod(LinkMovementMethod.getInstance());
 
+        viewHolder.getTime().setText(objects.get(i).getCharSequence());
 
-            SpannableString spannableString = new SpannableString(objects.get(i).getContent());
-            //#hashtags
+        loadImage(viewHolder.getAvt() , i);
 
-            while (o.find()) {
+    }
 
-                spannableString.setSpan(new NonUnderlinedClickableSpan(o.group(),
-                                0), o.start(), o.end(),
-                        Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-            }
-
-            // --- @mention
-            while (mention.find()) {
-                spannableString.setSpan(
-                        new NonUnderlinedClickableSpan(mention.group(), 1), mention.start(), mention.end(),
-                        Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-            }
-
-            viewHolder.getContent().setText(spannableString);
-            viewHolder.getContent().setMovementMethod(LinkMovementMethod.getInstance());
-        }
-        catch (Exception e ){
-            Toast.makeText(context, "Content have problems",
-                    Toast.LENGTH_LONG).show();
-            e.printStackTrace();
-        }
-
-        try{
-            CharSequence ago = DateUtils.getRelativeTimeSpanString(objects.get(i).getDtPost(), System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS);
-            viewHolder.getTime().setText(ago);
-        }
-        catch (Exception e){
-            Toast.makeText(context, "Time have problems",
-                    Toast.LENGTH_LONG).show();
-            e.printStackTrace();
-        }
-
+    private void loadImage(ImageView avt ,int i) {
         try{
             Glide.with(context)
                     .asBitmap()
                     .load(objects.get(i).getUrlIamge())
-                    .into(viewHolder.getAvt());
-
-
+                    .into(avt);
         }
         catch (Exception e){
-            Toast.makeText(context, "Can not drawable picture",
-                    Toast.LENGTH_LONG).show();
-            e.printStackTrace();
+            Log.d("Error :",e.getMessage());
         }
-
     }
+
 
     @Override
     public int getItemCount() {
         return objects.size();
     }
 
-    public class NonUnderlinedClickableSpan extends ClickableSpan {
-
-        int type;// 0-hashtag , 1- mention, 2- url link
-        String text;// Keyword or url
-        String time;
-
-        public NonUnderlinedClickableSpan(String text, int type) {
-            this.text = text;
-            this.type = type;
-            this.time = time;
-        }
-
-        @Override
-        public void onClick(View view) {
-
-        }
-
-        @Override
-        public void updateDrawState(TextPaint ds) {
-            //adding colors
-            if (type == 1)
-                ds.setColor(context.getResources().getColor(
-                        R.color.colorAccent));
-            else
-                ds.setColor(context.getResources().getColor(
-                        R.color.colorAccent));
-            ds.setUnderlineText(false);
-        }
-    }
 }
