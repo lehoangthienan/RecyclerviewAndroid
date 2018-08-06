@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     AdapterTimeLine adapterTimeLine;
     FloatingActionButton fab;
     String linkPicture = "https://zmp3-photo.zadn.vn/thumb/240_240/avatars/4/3/43d8be33dc00a33132c82adb9d0d3a54_1509355224.jpg";
-    String contents;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
         rcTimeLine.setHasFixedSize(true);
 
         addData();
+        setAdapter();
+    }
 
-
+    private void setAdapter() {
         adapterTimeLine = new AdapterTimeLine(this ,listTimeLine);
         rcTimeLine.setAdapter(adapterTimeLine);
         rcTimeLine.setLayoutManager(new LinearLayoutManager(this));
-
-
     }
 
     private void addData() {
